@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { sdk } from '@farcaster/miniapp-sdk';
-import { Mic, Home, Zap, Users, Settings2, ChevronRight } from 'lucide-react';
+import { Mic, Home as HomeIcon, Zap, Users, Settings2, ChevronRight } from 'lucide-react';
 import { ConnectWallet } from './components/ConnectWallet';
 import { VoiceCommandInput } from './components/VoiceCommandInput';
 import { BlueprintCard } from './components/BlueprintCard';
@@ -105,7 +105,7 @@ export default function Home() {
               <h2 id="quick-actions-heading" className="text-lg sm:text-xl font-semibold text-fg mb-4">Quick Actions</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <QuickActionCard
-                  icon={<Home className="w-6 h-6" />}
+                  icon={<HomeIcon className="w-6 h-6" />}
                   title="Smart Home"
                   subtitle="Controls"
                   onClick={() => console.log('Smart Home')}
@@ -291,7 +291,7 @@ export default function Home() {
               aria-label="Home"
               aria-current={activeTab === 'home' ? 'page' : undefined}
             >
-              <Home className="w-5 h-5 sm:w-6 sm:h-6" />
+              <HomeIcon className="w-5 h-5 sm:w-6 sm:h-6" />
               <span className="text-[10px] sm:text-xs font-medium">Home</span>
             </button>
             <button
