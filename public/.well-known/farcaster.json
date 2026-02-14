@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjkxNTIsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgwMmVmNzkwRGQ3OTkzQTM1ZkQ4NDdDMDUzRURkQUU5NDBEMDU1NTk2In0",
+    "payload": "eyJkb21haW4iOiJ2b2ljZWJvdW5kLmFwcCJ9",
+    "signature": "MHgxMGQwZGU4ZGYwZDUwZTdmMGIxN2YxMTU2NDI1MjRmZTY0MTUyZGU4ZGU1MWU0MThiYjU4ZjVmZmQxYjRjNDBiNGVlZTRhNDcwNmVmNjhlMzQ0ZGQ5MDBkYmQyMmNlMmVlZGY5ZGQ0N2JlNWRmNzMwYzUxNjE4OWVjZDJjY2Y0MDFj"
+  },
+  "frame": {
+    "version": "next",
+    "name": "VoiceBound: Hindi AI Control",
+    "iconUrl": "https://voicebound.app/icon.png",
+    "homeUrl": "https://voicebound.app/",
+    "splashImageUrl": "https://voicebound.app/splash.png",
+    "splashBackgroundColor": "#0a1929",
+    "webhookUrl": "https://voicebound.app/api/webhook",
+    "subtitle": "Secure Hindi voice control",
+    "description": "Create, manage, and share personalized Hindi voice commands for your devices and smart homes, integrated with Farcaster for social interaction and community-driven automation.",
+    "screenshotUrls": [
+      "https://voicebound.app/screenshot1.png",
+      "https://voicebound.app/screenshot2.png",
+      "https://voicebound.app/screenshot3.png"
+    ],
+    "primaryCategory": "social",
+    "tags": ["voice", "hindi", "smart-home", "ai", "automation"],
+    "heroImageUrl": "https://voicebound.app/hero.png",
+    "tagline": "Your voice, your control",
+    "ogTitle": "VoiceBound: Hindi AI Control",
+    "ogDescription": "Secure, user-owned Hindi voice AI for device & smart home control on Base",
+    "ogImageUrl": "https://voicebound.app/og-image.png"
+  }
+}
