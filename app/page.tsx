@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { sdk } from '@farcaster/miniapp-sdk';
-import { Mic, Home, Zap, Users, Settings2, ChevronRight } from 'lucide-react';
+import { Mic, Home as HomeIcon, Zap, Users, Settings2, ChevronRight } from 'lucide-react';
 import { ConnectWallet } from './components/ConnectWallet';
 import { VoiceCommandInput } from './components/VoiceCommandInput';
 import { BlueprintCard } from './components/BlueprintCard';
 import { QuickActionCard } from './components/QuickActionCard';
+import { PaymentTest } from './components/PaymentTest';
 
 export default function Home() {
   const [isReady, setIsReady] = useState(false);
@@ -55,12 +56,17 @@ export default function Home() {
               <VoiceCommandInput />
             </section>
 
+            {/* Payment Testing */}
+            <section>
+              <PaymentTest />
+            </section>
+
             {/* Quick Actions */}
             <section>
               <h2 className="text-xl font-semibold text-fg mb-4">Quick Actions</h2>
               <div className="grid grid-cols-2 gap-4">
                 <QuickActionCard
-                  icon={<Home className="w-6 h-6" />}
+                  icon={<HomeIcon className="w-6 h-6" />}
                   title="Smart Home"
                   subtitle="Controls"
                   onClick={() => console.log('Smart Home')}
@@ -180,7 +186,7 @@ export default function Home() {
                 activeTab === 'home' ? 'text-accent' : 'text-muted hover:text-fg'
               }`}
             >
-              <Home className="w-6 h-6" />
+              <HomeIcon className="w-6 h-6" />
               <span className="text-xs font-medium">Home</span>
             </button>
             <button
