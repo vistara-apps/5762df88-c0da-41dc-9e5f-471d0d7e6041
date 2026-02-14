@@ -1,23 +1,22 @@
 # VoiceBound: Hindi AI Control
 
-A Base Mini App for secure, user-owned Hindi voice AI control of devices and smart homes.
+Secure, user-owned Hindi voice AI for device & smart home control on Base.
 
 ## Features
 
-- 🎤 **Personalized Hindi Command Profiles**: Create and manage custom voice commands on-chain
-- 📚 **Community Blueprint Library**: Share and discover voice automation scripts
-- 🔗 **Farcaster Integration**: Voice-activated social actions and community features
-- 🔐 **Secure & Private**: User-owned voice profiles with on-chain ownership
-- 🏠 **Smart Home Control**: Integrate with your devices and home automation
+- 🎤 **Personalized Hindi Command Profiles** - Create and manage custom voice commands on-chain
+- 🌐 **Community Blueprint Library** - Share and discover voice automation blueprints
+- 🔗 **Farcaster Integration** - Voice-activated social actions and community features
+- 🔐 **Secure & Private** - User-owned voice profiles with on-chain ownership
+- ⚡ **Gas Sponsored** - Seamless transactions with Coinbase Paymaster
 
 ## Tech Stack
 
 - **Framework**: Next.js 15 with App Router
-- **Blockchain**: Base (L2 on Ethereum)
-- **Wallet**: OnchainKit + Coinbase Wallet
-- **Social**: Farcaster Mini App SDK
+- **Blockchain**: Base (L2)
+- **Identity**: OnchainKit + Farcaster
 - **Styling**: Tailwind CSS with Coinbase theme
-- **Language**: TypeScript
+- **Voice AI**: Hindi voice recognition integration
 
 ## Getting Started
 
@@ -44,37 +43,36 @@ npm run dev
 
 ```
 app/
-├── components/          # React components
-│   ├── Providers.tsx   # OnchainKit & React Query providers
-│   ├── ConnectWallet.tsx
+├── components/          # Reusable UI components
 │   ├── VoiceCommandInput.tsx
 │   ├── BlueprintCard.tsx
-│   └── QuickActionCard.tsx
-├── layout.tsx          # Root layout
+│   └── ConnectWalletButton.tsx
+├── layout.tsx          # Root layout with providers
 ├── page.tsx            # Main page
-└── globals.css         # Global styles
+├── providers.tsx       # OnchainKit & React Query providers
+└── globals.css         # Global styles with Coinbase theme
 
 public/
 └── .well-known/
-    └── farcaster.json  # Mini App manifest
+    └── farcaster.json  # Farcaster Mini App manifest
 ```
 
 ## Key Features Implementation
 
 ### Voice Command Input
-- Real-time Hindi voice recognition
-- Visual feedback during listening
-- Command history and suggestions
+- Real-time listening state with visual feedback
+- Animated microphone button
+- Example Hindi commands
 
-### Blueprint System
-- Community-shared automation scripts
-- Fork and customize existing blueprints
-- Creator attribution and fork tracking
+### Community Blueprints
+- Discoverable automation templates
+- Fork and customize functionality
+- Creator attribution with Farcaster identity
 
 ### Farcaster Integration
-- Voice-activated casts
-- Social sharing of blueprints
-- Community discovery
+- User context from MiniKit
+- Social sharing capabilities
+- Notification system for community engagement
 
 ## Deployment
 
@@ -87,9 +85,9 @@ npm start
 
 ## Environment Variables
 
-- `NEXT_PUBLIC_ONCHAINKIT_API_KEY`: Your OnchainKit API key
-- `NEXT_PUBLIC_CHAIN_ID`: Base chain ID (8453 for mainnet, 84532 for testnet)
-- `NEXT_PUBLIC_RPC_URL`: Base RPC endpoint
+- `NEXT_PUBLIC_ONCHAINKIT_API_KEY` - OnchainKit API key for Base integration
+- `NEXT_PUBLIC_BASE_RPC_URL` - Base mainnet RPC endpoint
+- `NEXT_PUBLIC_BASE_SEPOLIA_RPC_URL` - Base Sepolia testnet RPC endpoint
 
 ## License
 
