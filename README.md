@@ -9,12 +9,14 @@ A Base Mini App for secure, user-owned Hindi voice AI control of devices and sma
 - 🔗 **Farcaster Integration**: Voice-activated social actions and community features
 - 🔐 **Secure & Private**: User-owned voice profiles with on-chain ownership
 - 🏠 **Smart Home Control**: Integrate with your devices and home automation
+- 💳 **X402 Payment Flow**: Automatic USDC payments on Base for premium features
 
 ## Tech Stack
 
 - **Framework**: Next.js 15 with App Router
 - **Blockchain**: Base (L2 on Ethereum)
-- **Wallet**: OnchainKit + Coinbase Wallet
+- **Wallet**: Wagmi + OnchainKit + Coinbase Wallet
+- **Payments**: x402 Protocol with USDC on Base
 - **Social**: Farcaster Mini App SDK
 - **Styling**: Tailwind CSS with Coinbase theme
 - **Language**: TypeScript
@@ -28,10 +30,15 @@ npm install
 
 2. Create `.env.local` file:
 ```bash
-cp .env.local.example .env.local
+cp .env.example .env.local
 ```
 
-3. Add your OnchainKit API key to `.env.local`
+3. Configure environment variables in `.env.local`:
+```bash
+NEXT_PUBLIC_ONCHAINKIT_API_KEY=your_api_key
+NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_project_id
+NEXT_PUBLIC_API_BASE_URL=https://your-api-endpoint.com
+```
 
 4. Run the development server:
 ```bash
@@ -45,18 +52,26 @@ npm run dev
 ```
 app/
 ├── components/          # React components
-│   ├── Providers.tsx   # OnchainKit & React Query providers
-│   ├── ConnectWallet.tsx
+│   ├── Providers.tsx       # Wagmi + OnchainKit providers
+│   ├── ConnectWallet.tsx   # Wallet connection
+│   ├── PaymentTest.tsx     # X402 payment testing
 │   ├── VoiceCommandInput.tsx
 │   ├── BlueprintCard.tsx
-│   └── QuickActionCard.tsx
-├── layout.tsx          # Root layout
-├── page.tsx            # Main page
-└── globals.css         # Global styles
+│   ├── QuickActionCard.tsx
+│   └── ThemeProvider.tsx
+├── config/
+│   └── wagmi.ts           # Wagmi configuration
+├── hooks/
+│   └── usePayment.ts      # X402 payment hook
+├── lib/
+│   └── x402-client.ts     # X402 axios client
+├── layout.tsx             # Root layout
+├── page.tsx               # Main page
+└── globals.css            # Global styles
 
 public/
 └── .well-known/
-    └── farcaster.json  # Mini App manifest
+    └── farcaster.json     # Mini App manifest
 ```
 
 ## Key Features Implementation
@@ -76,6 +91,13 @@ public/
 - Social sharing of blueprints
 - Community discovery
 
+### X402 Payment System
+- Automatic payment handling for premium features
+- USDC payments on Base network
+- Transaction confirmation and tracking
+- Comprehensive error handling
+- See [PAYMENT_IMPLEMENTATION.md](./PAYMENT_IMPLEMENTATION.md) for details
+
 ## Deployment
 
 Deploy to Vercel or any Next.js-compatible platform:
@@ -87,9 +109,14 @@ npm start
 
 ## Environment Variables
 
-- `NEXT_PUBLIC_ONCHAINKIT_API_KEY`: Your OnchainKit API key
-- `NEXT_PUBLIC_CHAIN_ID`: Base chain ID (8453 for mainnet, 84532 for testnet)
-- `NEXT_PUBLIC_RPC_URL`: Base RPC endpoint
+- `NEXT_PUBLIC_ONCHAINKIT_API_KEY`: Your OnchainKit API key from [Coinbase Portal](https://portal.cdp.coinbase.com/)
+- `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID`: WalletConnect project ID from [WalletConnect Cloud](https://cloud.walletconnect.com/)
+- `NEXT_PUBLIC_API_BASE_URL`: Your API base URL for x402 payments
+
+## Documentation
+
+- [Payment Implementation Guide](./PAYMENT_IMPLEMENTATION.md) - X402 payment flow documentation
+- [Testing Guide](./TESTING.md) - Testing instructions and checklist
 
 ## License
 
